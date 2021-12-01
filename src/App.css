@@ -40,3 +40,9 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.fontMedia{
+  font-size: 25px;
+}
+.boxmodCentrar {display: flex; justify-content: center; align-items: center;}
+

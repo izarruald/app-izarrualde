@@ -1,43 +1,29 @@
-import { useState } from 'react'
+
 import logo from './logo.svg'
 import './App.css'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/NavBar/NavBar';
+
 function App() {
-  const [count, setCount] = useState(0)
+
+
+    const estilos = {backgroundColor:'green' , fontSize: '35px'}
+    // Y APLICARLO DENTRO DE LAS LLAVES CON EL NOMBRE "ESTILOS"
+    const Evento = ()=> console.log("Hola mundo")
+
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> ivan 12 23 and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="App" style={ estilos }>
+        
+        <section  onClick={Evento} >
+        <NavBar/> 
+            <img src={logo} className="App-logo" alt="logo" />
+        </section>
+        
+        
+
+
     </div>
   )
 }
