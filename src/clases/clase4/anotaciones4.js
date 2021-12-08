@@ -18,12 +18,12 @@
     //COMUNES (entre llamves)
     
 
-    //PROPIEDADES: las maneras de pasar de un componente padre a un componente hijo
+    //PROPIEDADES: las maneras de comunicarse de un componente padre a un componente hijo
 
     //COMPONETES DE PRESENTACION: se limitan a mostrar datos normalmente manejan pocos estados(const-var)
     
     //COMPONENTES CONTENEDORES: contiene otros componentes
 
 
-    //CHILDREN:   
+    //CHILDREN: el hijo de un componente padre (otra forma de pasar un componente como prop)  
 

@@ -2,7 +2,7 @@
 /* import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons'; */
 import React from 'react'
 import {Navbar, Container, Nav, NavDropdown  } from 'react-bootstrap';
-/* import CartWidget from '../../clases/clase4/cartWidget'; */
+/* import CartWidget from '../../clases/clase4/CartWidget'; */
 import prato from './1939.png'
 const NavBar = () => {
     return (
