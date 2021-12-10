@@ -1,21 +1,16 @@
- 
-import Boton from "./clases/clase5/Boton"; 
-import ComponenteUseEffect from "./clases/clase5/ComponenteUseEffect";
-import Form from "./clases/clase5/Form";
-import Titulo from "./clases/clase5/Titulo";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/NavBar/NavBar';
+import ComponenteUseEffect from './components/ComponenteUseEffect';
+import ItemListContainer from './components/ItemListContainer';
 
 
-function App() {//Componentes contenedor    
+function App() {   
     
   return (
         <>
-{/*             <Titulo/>
-            <Form title='soy form'>
-                <Boton />
-            </Form> */}
-
-     
-            {<ComponenteUseEffect />}
+            <NavBar/>
+            <ComponenteUseEffect/>
+            <ItemListContainer/>
         </>
   );
 }
