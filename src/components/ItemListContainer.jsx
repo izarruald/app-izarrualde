@@ -13,7 +13,7 @@ function ItemListContainer ( {greeting} ) {
         getFetch
         .then(resp => setProductos(resp))//caputuro las resp con then y con setProducto lo hago persistente
         .catch(err => console.log(err))
-        .finally(()=> setLoading (false)) //
+        .finally(()=> setLoading (false)) //ejecucion final despues de que carguen los productos
     },[])//los corchetes SOLOS hace que se ejecute una sola vez
 
     function handlerClick(){
@@ -26,14 +26,13 @@ function ItemListContainer ( {greeting} ) {
     //KEY: esta propiedad es porque react necesita que marque la identidad del elemento
     return (
         <div>
-            { greeting }
+            { greeting }{/* que hace el greeting? */}
             {loading ?
                 <h2>Cargando</h2> : //si loading es true el cargando
-                <ItemList productos={productos}/>
+                <ItemList listado={productos}/>//estado en el que guardo lo resuelto por la promesa
             }
         </div>
     )
 }
 
 export default ItemListContainer
-//quede 30Min

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import {Card , Button} from 'react-bootstrap' 
 
 function ComponenteUseEffect(){
     //contador= donde guardo el valor / setContador= funcion para setear el contador (cambiar el valor)
@@ -43,13 +43,16 @@ function ComponenteUseEffect(){
     console.log(Date)
 
     return(
-        <div>
-            <p>{contador}</p>
-            <p>{fecha}</p>
+        <div className='fontBody '>
+            
+            {/* <p>{fecha}</p> */}
             {/* defino un evento y ejecuto la funcion dentro del evento */}
-            <button onClick={handlerClick}>Click +</button>
-            <button onClick={clickMenos}>Click -</button><br />
-            <button onClick={clickCarrito}>Agregar al carrito</button>
+            <div className='flex boxmodCentrar ' >
+                <Button variant="primary" onClick={clickMenos}>-</Button>
+                <p className='paddingRL fontMedia'>{contador}</p>
+                <Button variant="primary" onClick={handlerClick}>+</Button>
+            </div>
+            <Button className='centrarAling' variant="primary" onClick={clickCarrito}>Agregar al carrito</Button>
             {/* cada vez que se clickee se ejecutara toda la funcion componenteUseEffect */}
         </div>
     );

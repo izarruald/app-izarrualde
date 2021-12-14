@@ -1,9 +1,11 @@
+import prato from '../components/NavBar/1939.png'
 const productos =[
-    {id:1, nombre:'nueces',  precio: 180 },
-    {id:2, nombre:'almendras', precio: 162},
-    {id:3, nombre:'castañas', precio: 158},
-    {id:4, nombre:'mani', precio: 25},
-    {id:5, nombre:'Mix de frutos secos', precio: 163}
+    {id:1, nombre:'Nueces',  precio: 180 , foto:prato},
+    {id:2, nombre:'Almendras', precio: 162 , foto:prato},
+    {id:3, nombre:'Castañas', precio: 158 , foto:prato},
+    {id:4, nombre:'Mani', precio: 25 , foto:prato},
+    {id:5, nombre:'Mix de frutos secos', precio: 163 , foto:prato},
+    {id:5, nombre:'Aritos de colores', precio: 37 , foto:prato}
 ]//datos de la base de datos
 
 

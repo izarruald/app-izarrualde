@@ -5,8 +5,8 @@ import { CartWidget } from '../CartWidget';
 import prato from './1939.png'
 const NavBar = () => {
     return (
-            <Navbar bg="light" expand="lg">
-            <Container>
+            <Navbar className='bgPunto'  expand="lg">
+            <Container >
                 <Navbar.Brand href="#home"><img src={prato} style={{width:'65px' , height:'40px'}} className="boxmodCentrar" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar className="boxmodCentrar" id="basic-navbar-nav">

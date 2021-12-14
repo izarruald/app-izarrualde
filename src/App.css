@@ -42,7 +42,17 @@ button {
 }
 
 .fontMedia{
-  font-size: 25px;
+  font-size: 19px;
+}
+.fontBody{
+  font-size: 40px;
 }
 .boxmodCentrar {display: flex; justify-content: center; align-items: center;}
-
+.colorPunto{color: rgb(141, 187, 81);}
+.bgPunto{background-color:rgb(141, 187, 81);}
+.listadoFlex {flex-wrap:wrap;}
+.flex{display: flex;}
+.paddingBetwen{margin: 2%;}
+.padding{padding: 10px;}
+.centrarAling{text-align: center;}
+.paddingRL{padding-left: 10px; padding-right: 10px;}

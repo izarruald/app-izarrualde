@@ -4,7 +4,7 @@
 
 //resolve, reject es = resuelto, rechazado (son funciones tambien)
 
-//THEN: se usara para CAPTURAR RESPUESTASD y ver el resultado del computo de la tarea (err - resp)
+//THEN: se usara para CAPTURAR RESPUESTAS y ver el resultado del computo de la tarea (err - resp)
 
 //BUCLE DE EVENTOS
 
@@ -14,3 +14,4 @@
 //MAPS: solo toma ARRAYS  (01;30)
 //recibe un array y con la funcion mostrada me retorna otro array, uno por cada objeto que tengamos
 
+//GET FETCH ?
