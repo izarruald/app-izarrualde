@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import {useParams} from 'react-router-dom'
 import { getFetch } from "../helpers/getFetch"
 import ItemList from "./ItemList";
 
@@ -7,20 +8,28 @@ function ItemListContainer ( {greeting} ) {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
 
-
+    const {idCate} = useParams () //capuramos el valor
 
     useEffect(() => {
-        getFetch
-        .then(resp => setProductos(resp))//caputuro las resp con then y con setProducto lo hago persistente
-        .catch(err => console.log(err))
-        .finally(()=> setLoading (false)) //ejecucion final despues de que carguen los productos
-    },[])//los corchetes SOLOS hace que se ejecute una sola vez
+        if (idCate) {
+            getFetch
+            .then(resp => setProductos(resp.filter(prod => prod.categoria === idCate)))//caputuro las resp con then y con setProducto lo hago persistente
+            .catch(err => console.log(err))
+            .finally(()=> setLoading (false)) //ejecucion final despues de que carguen los productos
+        } else {
+            getFetch
+            .then(resp => setProductos(resp))//caputuro las resp con then y con setProducto lo hago persistente
+            .catch(err => console.log(err))
+            .finally(()=> setLoading (false)) //ejecucion final despues de que carguen los productos
+        }
 
-    function handlerClick(){
-        setBool(!bool)//hace que cambie el valor de bool cada vez que se haga click (cambio de evento)
-    }
+    },[idCate])//cuando detecte un cambio en "idCate" se va a renderizar  /los corchetes SOLOS hace que se ejecute una sola vez
+
+    console.log(idCate)//toma el parametro que tiene la ruta (lo que esta despues de la segunda barra)
 
 
+
+    
     //MAP: recibe un array y con la funcion mostrada me retorna otro con las caracteriscas pedidas array,
     //uno por cada objeto que tengamos
     //KEY: esta propiedad es porque react necesita que marque la identidad del elemento

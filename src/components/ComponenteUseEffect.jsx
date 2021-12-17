@@ -22,7 +22,7 @@ function ComponenteUseEffect(){
     }
 
 
-    //se usa para poner cosas post renderizado
+/*     //se usa para poner cosas post renderizado
     useEffect(()=>{
         console.log("use efecto llamada a api 2")//para tareas pesadas o asincronicas (un alert x ej)
     }) 
@@ -36,11 +36,11 @@ function ComponenteUseEffect(){
     }, [fecha]) //hace que se ejecute cada vez que cambie fecha
 
 
-    console.log('ejecucion antes de render 1')
+    console.log('ejecucion antes de render 1') */
 
 
-    console.log(contador)
-    console.log(Date)
+/*     console.log(contador)
+    console.log(Date) */
 
     return(
         <div className='fontBody '>

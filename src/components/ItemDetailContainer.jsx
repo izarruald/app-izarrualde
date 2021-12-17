@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-
+import {useParams} from 'react-router-dom'
 import ItemList from "./ItemList";
 import {Card , Button} from 'react-bootstrap' 
 import ComponenteUseEffect from "./ComponenteUseEffect";
@@ -11,18 +11,15 @@ function ItemDetailContainer ( {greeting} ) {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
 
-
+    const {id} = useParams () //capuramos el valor
 
     useEffect(() => {
         getFetch2
-        .then(resp => setProductos(resp))//caputuro las resp con then y con setProducto lo hago persistente
+        .then(resp => setProductos(resp.filter(prod => prod.id === id)))//caputuro las resp con then y con setProducto lo hago persistente
         .catch(err => console.log(err))
         .finally(()=> setLoading (false)) //ejecucion final despues de que carguen los productos
-    },[])//los corchetes SOLOS hace que se ejecute una sola vez
+    },[id])//los corchetes SOLOS hace que se ejecute una sola vez
 
-    function handlerClick(){
-        setBool(!bool)//hace que cambie el valor de bool cada vez que se haga click (cambio de evento)
-    }
 
 
     //MAP: recibe un array y con la funcion mostrada me retorna otro con las caracteriscas pedidas array,
