@@ -16,7 +16,7 @@ function Item({producto}) {/* poner ver detalle, sacar de la pag de bootstrap */
                 $ {producto.precio}
                 </Card.Text>
                 <ComponenteUseEffect/>
-                <Link to = {`/detalle/${producto.id}`}>
+                <Link to = {`/detalle/${producto.id}`}>{/*  */}
                     <Button className='centrarAling' variant="primary">Ver detalle</Button>
                 </Link>
             </Card.Body>

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import {useParams} from 'react-router-dom'
-import ItemList from "./ItemList";
 import {Card , Button} from 'react-bootstrap' 
 import ComponenteUseEffect from "./ComponenteUseEffect";
-import { getFetch2 } from "./ItemDetail";
+import { getFetch } from "../helpers/getFetch";
+
 
 
 
@@ -13,12 +13,14 @@ function ItemDetailContainer ( {greeting} ) {
 
     const {id} = useParams () //capuramos el valor
 
+    console.log(id)
+
     useEffect(() => {
-        getFetch2
-        .then(resp => setProductos(resp.filter(prod => prod.id === id)))//caputuro las resp con then y con setProducto lo hago persistente
+        getFetch
+        .then(resp => setProductos(resp.find(prod => prod.id === parseInt(id))))//caputuro las resp con then y con setProducto lo hago persistente
         .catch(err => console.log(err))
         .finally(()=> setLoading (false)) //ejecucion final despues de que carguen los productos
-    },[id])//los corchetes SOLOS hace que se ejecute una sola vez
+    },[])//los corchetes SOLOS hace que se ejecute una sola vez
 
 
 
@@ -31,20 +33,19 @@ function ItemDetailContainer ( {greeting} ) {
             {loading ?
                 <h2>Cargando</h2> : //si loading es true el cargando
                 <div className='listadoFlex boxmodCentrar centrarAling padding'>
-                {productos.map((producto) => <div className="">
+                 <div className="">
                                             <Card style={{ width: '18rem' }}>
-                                            <Card.Img variant="top" src={producto.foto} />
+                                            <Card.Img variant="top" src={productos.foto} />
                                             <Card.Body>
-                                                <Card.Title className="fontBody">{producto.nombre}</Card.Title>
+                                                <Card.Title className="fontBody">{productos.nombre}</Card.Title>
                                                 <Card.Text>
-                                                $ {producto.precio}<br/>
+                                                $ {productos.precio}<br/>
                                                 </Card.Text>
                                                 <ComponenteUseEffect/>
                                             </Card.Body>
                                             </Card>
-                                        </div>)}
-                {/* recorre el listado de productos devolviendo los productos individuale en la forma del componente Item 
-                     */}
+                                        </div>
+                {/* recorre el listado de productos devolviendo los productos individuale en la forma del componente Item */}
                 </div>
             }
         </div>

@@ -56,3 +56,10 @@ button {
 .padding{padding: 10px;}
 .centrarAling{text-align: center;}
 .paddingRL{padding-left: 10px; padding-right: 10px;}
+.paddingT{padding-top: 8px;}
+.dropdown-item:hover{background-color:rgb(141, 187, 81) ;}
+.home{
+  text-decoration: none;
+  color: rgba(0,0,0,.55);
+}
+.home:hover{color: rgba(0,0,0,.55);}
