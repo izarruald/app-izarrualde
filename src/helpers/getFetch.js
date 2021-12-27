@@ -6,12 +6,12 @@ import mani from '../assets/img/mani.jpg'
 import mix from '../assets/img/mix.jpg'
 import aritos from '../assets/img/aritos.jpg'
 const productos =[
-    {id:1, nombre:'Nueces',  precio: 180 , foto: nueces , categoria: "frutos secos"},
-    {id:2, nombre:'Almendras', precio: 162 , foto: almendras , categoria: "frutos secos"},
-    {id:3, nombre:'Castañas', precio: 158 , foto: castanas , categoria: "frutos secos"},
-    {id:4, nombre:'Mani', precio: 25 , foto: mani , categoria: "frutos secos"},
-    {id:5, nombre:'Mix de frutos secos', precio: 163 , foto: mix , categoria: "frutos secos"},
-    {id:6, nombre:'Aritos de colores', precio: 37 , foto: aritos , categoria: "cereales"}
+    {id:1, nombre:'Nueces',  precio: 180 , foto: nueces , categoria: "frutos secos", cantidad: 6},
+    {id:2, nombre:'Almendras', precio: 162 , foto: almendras , categoria: "frutos secos", cantidad: 6},
+    {id:3, nombre:'Castañas', precio: 158 , foto: castanas , categoria: "frutos secos", cantidad: 6},
+    {id:4, nombre:'Mani', precio: 25 , foto: mani , categoria: "frutos secos", cantidad: 6},
+    {id:5, nombre:'Mix de frutos secos', precio: 163 , foto: mix , categoria: "frutos secos", cantidad: 6},
+    {id:6, nombre:'Aritos de colores', precio: 37 , foto: aritos , categoria: "cereales", cantidad: 6}
 ]//datos de la base de datos
 
 

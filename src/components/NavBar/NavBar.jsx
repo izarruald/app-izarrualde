@@ -16,6 +16,7 @@ const NavBar = () => {
                     <NavDropdown className="fontMedia" title="Dropdown" id="basic-nav-dropdown">
                         <Link className=" dropdown-item" to='/categoria/frutos secos' >Frutos secos</Link>
                         <NavLink className=" dropdown-item"  to='/categoria/cereales'>Cereales</NavLink>
+                        <NavLink className=" dropdown-item"  to='/cart'>Carrito</NavLink>
                         <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                         <NavDropdown.Divider/>
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>

@@ -7,16 +7,17 @@ import ItemListContainer from './components/ItemListContainer';
 import './App.css'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Home from './pages/home';
-import { Cart } from './components/Cart';
+import  Cart  from './components/Cart';
+import  CartContextProvider  from './context/CartContext';
 
 
 function App() {   
     
   return (
     <BrowserRouter>
-
         <>
             <NavBar/>
+            <CartContextProvider>
             <Routes>
                 <Route 
                     exact /* hace que la ruta sea exacta */
@@ -37,10 +38,10 @@ function App() {
                     exact
                     path= "/cart" /*  */
                     element={<Cart/> }/* mostrame este elemento */
-                />
-
-                
+                />   
             </Routes>
+            
+            </CartContextProvider>
         </>
     </BrowserRouter>    
   );
