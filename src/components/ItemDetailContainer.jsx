@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import {useParams} from 'react-router-dom'
 import {Card , Button} from 'react-bootstrap' 
-import ComponenteUseEffect from "./ComponenteUseEffect";
+import Contador from "./Contador";
 import { getFetch } from "../helpers/getFetch";
 
 
@@ -22,7 +22,7 @@ function ItemDetailContainer ( {greeting} ) {
         .finally(()=> setLoading (false)) //ejecucion final despues de que carguen los productos
     },[])//los corchetes SOLOS hace que se ejecute una sola vez
 
-
+  
 
     //MAP: recibe un array y con la funcion mostrada me retorna otro con las caracteriscas pedidas array,
     //uno por cada objeto que tengamos
@@ -41,7 +41,7 @@ function ItemDetailContainer ( {greeting} ) {
                                                 <Card.Text>
                                                 $ {productos.precio}<br/>
                                                 </Card.Text>
-                                                <ComponenteUseEffect/>
+                                                <Contador productos={productos}/>
                                             </Card.Body>
                                             </Card>
                                         </div>

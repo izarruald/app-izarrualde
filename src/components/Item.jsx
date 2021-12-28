@@ -1,7 +1,6 @@
 import { getFetch } from "../helpers/getFetch"
 import React from 'react'
 import {Card , Button} from 'react-bootstrap' 
-import ComponenteUseEffect from "./ComponenteUseEffect"
 import {Link} from 'react-router-dom'
 
 function Item({producto}) {/* poner ver detalle, sacar de la pag de bootstrap */ 
@@ -15,7 +14,6 @@ function Item({producto}) {/* poner ver detalle, sacar de la pag de bootstrap */
                 <Card.Text>
                 $ {producto.precio}
                 </Card.Text>
-                <ComponenteUseEffect/>
                 <Link to = {`/detalle/${producto.id}`}>{/*  */}
                     <Button className='centrarAling' variant="primary">Ver detalle</Button>
                 </Link>

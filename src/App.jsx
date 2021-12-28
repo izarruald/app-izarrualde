@@ -1,12 +1,9 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/NavBar';
-import ComponenteUseEffect from './components/ComponenteUseEffect';
 import ItemListContainer from './components/ItemListContainer';
 import './App.css'
 import ItemDetailContainer from './components/ItemDetailContainer';
-import Home from './pages/home';
 import  Cart  from './components/Cart';
 import  CartContextProvider  from './context/CartContext';
 

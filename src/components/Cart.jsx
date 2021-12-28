@@ -2,14 +2,20 @@ import {useContext} from 'react'
 import { CartContext } from '../context/CartContext'
 function Cart () {
 
-    const { cartList ,borrarCarrito } = useContext(CartContext)
+    const { cartlist , borrarCarrito } = useContext(CartContext) /* ¿PORQUE? */
 
 
-
-    return (
+    
+    return ( 
         <div>
-             {  cartList.map(prod=> <li>{prod.name}   {prod.cantidad}</li>) }
+            {/* mientras cartlist sea mayor a 0 mostra el nombre y cantidad de productos que se puso en el contador */} 
+            {cartlist.length > 0 ? cartlist.map(prod=><li>{prod.item.nombre}  {prod.contador}</li>)
+            
+            /* : = sino mostra esto */
+            : <h1>No hay productos en el carrito</h1>}
             <button onClick={borrarCarrito} >Vaciar Carrito</button>
+
+            
         </div>
     )
 }
