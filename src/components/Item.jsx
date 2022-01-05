@@ -7,14 +7,14 @@ function Item({producto}) {/* poner ver detalle, sacar de la pag de bootstrap */
     return (
         <div className="paddingBetwen boxmodCentrar">
             <Card style={{ width: '300px' }}>
-            <Card.Img variant="top" src={producto.foto} />
+            <Card.Img variant="top" src={producto.fotoID} />
             <Card.Body className="centrarAling">
                 <Card.Title>{producto.nombre}</Card.Title>
                 <Card.Title>{producto.categoria}</Card.Title>
                 <Card.Text>
                 $ {producto.precio}
                 </Card.Text>
-                <Link to = {`/detalle/${producto.id}`}>{/*  */}
+                <Link to = {`/detalle/${producto.id}`}>
                     <Button className='centrarAling' variant="primary">Ver detalle</Button>
                 </Link>
             </Card.Body>

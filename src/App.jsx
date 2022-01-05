@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from './NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import './App.css'
 import ItemDetailContainer from './components/ItemDetailContainer';
@@ -11,10 +11,10 @@ import  CartContextProvider  from './context/CartContext';
 function App() {   
     
   return (
+    <CartContextProvider>
     <BrowserRouter>
         <>
             <NavBar/>
-            <CartContextProvider>
             <Routes>
                 <Route 
                     exact /* hace que la ruta sea exacta */
@@ -37,10 +37,9 @@ function App() {
                     element={<Cart/> }/* mostrame este elemento */
                 />   
             </Routes>
-            
-            </CartContextProvider>
         </>
-    </BrowserRouter>    
+    </BrowserRouter>
+    </CartContextProvider>      
   );
 }
 

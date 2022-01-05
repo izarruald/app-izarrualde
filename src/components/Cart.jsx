@@ -1,23 +1,35 @@
-import {useContext} from 'react'
-import { CartContext } from '../context/CartContext'
+//import {useContext} from 'react'
+//import { CartContext } from '../context/CartContext'
+import {Link} from 'react-router-dom'
+import {Button} from 'react-bootstrap' 
+import { useCartContext } from "../context/CartContext"
+
 function Cart () {
 
-    const { cartlist , borrarCarrito } = useContext(CartContext) /* ¿PORQUE? */
+    const { cartlist , borrarCarrito,eliminarItem,calculateTotalPrice } = useCartContext () /* ¿PORQUE? */
 
 
-    
-    return ( 
+    console.log(cartlist)
+    return (
         <div>
-            {/* mientras cartlist sea mayor a 0 mostra el nombre y cantidad de productos que se puso en el contador */} 
-            {cartlist.length > 0 ? cartlist.map(prod=><li>{prod.item.nombre}  {prod.contador}</li>)
-            
-            /* : = sino mostra esto */
-            : <h1>No hay productos en el carrito</h1>}
-            <button onClick={borrarCarrito} >Vaciar Carrito</button>
-
-            
-        </div>
-    )
+        {  
+          cartlist.length > 0 ?
+                  (
+                      cartlist.map(prod => <li key={prod.id} className='paddingTB'>{prod.nombre}<img src={prod.foto} style={{ width: '65px', height: '40px' }} />  {prod.contador} <button onClick={()=> eliminarItem(prod.id)}>eliminar item </button></li>)
+                  )
+          :
+          <div>
+              <h1>No hay productos en el carrito</h1>
+              <Link to={`/`}>
+                  <Button className='centrarAling' variant="primary">Ir a inicio</Button>
+              </Link>
+          </div>
+        }
+        <button onClick={()=> borrarCarrito()}>eliminar carrito </button>
+        <h2>Total de la compra <br /> $ {calculateTotalPrice()}</h2>
+        
+      </div>
+  )
 }
 
 export default Cart

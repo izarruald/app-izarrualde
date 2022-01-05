@@ -4,6 +4,7 @@ import {Card , Button} from 'react-bootstrap'
 import Contador from "./Contador";
 import { getFetch } from "../helpers/getFetch";
 
+import { collection, doc, getDoc, getFirestore,getDocs, query, where } from 'firebase/firestore' 
 
 
 
@@ -15,12 +16,26 @@ function ItemDetailContainer ( {greeting} ) {
 
     console.log(id)
 
-    useEffect(() => {
+/*     useEffect(() => {
         getFetch
-        .then(resp => setProductos(resp.find(prod => prod.id === parseInt(id))))//caputuro las resp con then y con setProducto lo hago persistente
+        .then(resp => setProductos(resp.find(prod => prod.id === id)))//caputuro las resp con then y con setProducto lo hago persistente
         .catch(err => console.log(err))
         .finally(()=> setLoading (false)) //ejecucion final despues de que carguen los productos
-    },[])//los corchetes SOLOS hace que se ejecute una sola vez
+    },[id]) *///los corchetes SOLOS hace que se ejecute una sola vez
+
+
+
+
+
+    useEffect(() => {
+        const db = getFirestore() //conexion a base de datos
+        const queryDb = doc(db, 'items', id) //crea la coleccion accede a item y me trae tal porducto
+        getDoc(queryDb) //promesa
+        .then( resp => setProductos( { id: resp.id, ...resp.data() } )) //setea el producto 1:18' con el data extraemos todos lo campos del Id
+        .finally(()=> setLoading (false))
+    },[id])                     /*dentro de llaves creo un objeto */
+
+
 
   
 

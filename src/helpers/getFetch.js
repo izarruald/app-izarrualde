@@ -1,4 +1,3 @@
-import prato from '../components/NavBar/1939.png'
 import nueces from '../assets/img/nueces.jpg'
 import almendras from '../assets/img/almendras.jpeg'
 import castanas from '../assets/img/castanas.jpg'
@@ -12,8 +11,7 @@ const productos =[
     {id:4, nombre:'Mani', precio: 25 , foto: mani , categoria: "frutos secos", cantidad: 6},
     {id:5, nombre:'Mix de frutos secos', precio: 163 , foto: mix , categoria: "frutos secos", cantidad: 6},
     {id:6, nombre:'Aritos de colores', precio: 37 , foto: aritos , categoria: "cereales", cantidad: 6}
-]//datos de la base de datos
-
+]//datos de la base de datos 
 
 export const getFetch = new Promise ((resolve)=>{
     //acciones pueden ser o no asincronicas setTime
