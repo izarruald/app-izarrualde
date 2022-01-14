@@ -22,7 +22,7 @@ function CartContextProvider({children}) {/* captura todos los componentes */
 
     function eliminarItem(id){
         setCartlist(cartlist.filter(prods=>prods.id !== id))
-    }
+    }//recibo el id del componente y con filter le digo que me traiga todo menos ese ID, guardo y seteo en el producto
 
 
     function agregarAlCarrito(item){
@@ -49,7 +49,14 @@ function CartContextProvider({children}) {/* captura todos los componentes */
 
 
     const calculateTotalPrice = () => {
-        return Number(cartlist.reduce((acc, item) => acc + item.precio * item.contador, 0))	}
+        return Number(cartlist.reduce((acc, item) => acc + item.precio * item.contador, 0))	
+        //acum que es donde se acumulan las cosas se inicializa en 0
+    }
+
+
+
+
+
 
 
 

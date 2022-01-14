@@ -36,18 +36,22 @@ function Contador({productos}){
             {mostrar ? 
                         <div>
                         <div className='flex boxmodCentrar ' >
-                            <Button variant="primary" onClick={clickMenos}>-</Button>
+                            <Button variant="success" onClick={clickMenos}>-</Button>
                             <p className='paddingRL fontMedia'>{contador}</p>
-                            <Button variant="primary" onClick={handlerClick}>+</Button>
+                            <Button variant="success" onClick={handlerClick}>+</Button>
                         </div>
-                        <Button className='centrarAling' variant="primary" onClick={clickCarrito}>Agregar al carrito</Button>
+                        <Button className='centrarAling' variant="success" onClick={clickCarrito}>Agregar al carrito</Button>
                         {/* cada vez que se clickee se ejecutara toda la funcion contador */}
                     </div>
                     :
-                    <Link to="/cart"><Button variant="primary">Ir al carrito</Button></Link>
+                    <div>
+                        <Link to="/cart"><Button variant="success">Ir al carrito</Button></Link>
+                        <Link to="/"><Button variant="success">Seguir comprando</Button></Link>
+                    </div>
+                    // <Link to="/"><Button>Seguir comprando</Button></Link>
                     }
         </div>
-    );
+    )
 }
 
 export default Contador;
