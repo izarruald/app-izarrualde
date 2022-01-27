@@ -5,35 +5,26 @@ import { useState } from 'react'
 import Footer from './Footer'
 import logo from "../assets/img/logo-punto.png"
 import Form from './Form'
+import NavBarr from '../NavBar/navBar2'
 
 function Cart () {
-    // const [idOrden, setIdOrden] = useState('')
     const [mostrar, setMostrar] = useState(true)
     const terminarCompra =()=>{
         setMostrar(false)
     }
 
     const { cartlist , borrarCarrito,eliminarItem,calculateTotalPrice } = useCartContext () /* saca todas estas funciones de useCartContext */
-    // const [dataForm, setDataForm] = useState({
-    //     name:"", email:"", phone:""
-    // })
 
-    // const handleChange = (e) => {
-    //     // console.log(e.target.name)
-    //     // console.log(e.target.value)
-    //     setDataForm({
-    //         ...dataForm, //guardo data form
-    //         [e.target.name]: e.target.value //le agrego estos valores
-    //     })
-    // }
-    // console.log(dataForm)
 
 
 
 
     return (
-        <div className='fondoCarrito footerBottom'>
-        <img className='centrarImg' src={logo} alt="" width={'200px'} />   
+        <div className='fondoCarrito  footerBottom fuenteNavbar'>
+            <div className='bgNegro centrarAling'>
+                <NavBarr/>
+            </div>
+            <img className='centrarImg' src={logo} alt="" width={'200px'} />   
 
 
         <div>
@@ -41,12 +32,6 @@ function Cart () {
             cartlist.length > 0 ?
                     (<div>
                         {cartlist.map(prod => 
-                        // <div key={prod.id} className='paddingTB tamanioFuenteCarrito margin centrarCol'>
-                        //     <h1 className='capitalize'>{prod.nombre}</h1>
-                        //     <img src={prod.fotoID} style={{ width: '150px', height: '100px' }} />
-                        //     <h2>Items: {prod.contador}</h2>
-                        //     <Button variant="success" onClick={()=> eliminarItem(prod.id)}>eliminar item </Button>
-                        // </div>
                         <div key={prod.id} className='paddingB tamanioFuenteCarrito padding centrarCol '>
                         <Card className='tamanioCardCarrito'>
                         <Card.Img className='tamanioFotoCarrito' variant="top" src={prod.fotoID} />

@@ -26,18 +26,13 @@ function Contador({productos}){
         agregarAlCarrito({...productos, contador}) //implementando la funcion global con productos (agregar los item al carrito)
     }
 
-        console.log(productos)
-
     return(
         <div className='fontBody'>
-            
-            {/* <p>{fecha}</p> */}
-            {/* defino un evento y ejecuto la funcion dentro del evento */}
             {mostrar ? 
-                        <div>
+                    <div>
                         <div className='flex boxmodCentrar ' >
                             <Button variant="success" onClick={clickMenos}>-</Button>
-                            <p className='paddingRL fontMedia'>{contador}</p>
+                            <p className='paddingRL margin0 fontMedia'>{contador}</p>
                             <Button variant="success" onClick={handlerClick}>+</Button>
                         </div>
                         <Button className='centrarAling' variant="success" onClick={clickCarrito}>Agregar al carrito</Button>
@@ -48,7 +43,6 @@ function Contador({productos}){
                         <Link to="/cart"><Button variant="success">Ir al carrito</Button></Link>
                         <Link to="/"><Button variant="success">Seguir comprando</Button></Link>
                     </div>
-                    // <Link to="/"><Button>Seguir comprando</Button></Link>
                     }
         </div>
     )

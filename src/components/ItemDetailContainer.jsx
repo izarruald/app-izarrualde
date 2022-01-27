@@ -5,6 +5,7 @@ import Contador from "./Contador";
 import logo from "../assets/img/logo-punto.png"
 import { collection, doc, getDoc, getFirestore,getDocs, query, where } from 'firebase/firestore' 
 import Footer from "../components/Footer"
+import NavBarr from "../NavBar/navBar2";
 
 
 
@@ -34,7 +35,10 @@ function ItemDetailContainer ( {greeting} ) {
             { greeting }{/* que hace el greeting?  es un mensaje comun */}
             {loading ?
                 <h2>Cargando</h2> : //si loading es true el cargando
-                <div className='centrarAling fondoDetalle '>
+                <div className='centrarAling fondoDetalle fuenteNavbar'>
+                                        <div className='bgNegro'>
+                                            <NavBarr/>
+                                        </div>
                                         <div>
                                             <img className="paddingTB" src={logo} alt="" width={'250px'} />
                                         </div>

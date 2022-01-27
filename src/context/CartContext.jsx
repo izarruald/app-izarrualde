@@ -10,12 +10,6 @@ export const useCartContext = () => useContext (CartContext)
 function CartContextProvider({children}) {/* captura todos los componentes */
     const [cartlist, setCartlist] = useState([])
 
-    console.log(cartlist)
-
-    //function agregarAlCarrito(item,contador) /* ¿QUE LE DICE CON ESTOS PARAMETROS? - dice que tome en cuenta item y contador */ {
-    //    setCartlist([...cartlist,{item, contador}])//le dice que deje todo lo que tiene ese array + lo que le estas pasando, item y la cantidad que estan sumando
-    //} /* A item le agregas la cantidad de poductos que se puso en el contador */
-
     function borrarCarrito() {
         setCartlist([])/* deja el array vacio */
     }
@@ -30,10 +24,9 @@ function CartContextProvider({children}) {/* captura todos los componentes */
         //en index guarda cartlist
         //y fijate si es nuevo o ya le tengo en mi lista
         //que comprueve en mi listado que ya tengo si el id que estoy ingresando con el id que ya tengo 
-        console.log(index)
+
         if (index > -1){/* si es mayor que -1 es porque lo encontro y ya existe ese item */
             const oldQy = cartlist[index].contador
-            console.log(oldQy)
 
             cartlist.splice(index,1)
             setCartlist([...cartlist, {...item, contador: item.contador + oldQy}])
@@ -60,7 +53,7 @@ function CartContextProvider({children}) {/* captura todos los componentes */
 
 
 
-    return (/* ¿QUE HACE TODO ESTO? */
+    return (
         <CartContext.Provider value={{
             cartlist,/* arriba el estado */
             agregarAlCarrito,/* abajo las funciones */
